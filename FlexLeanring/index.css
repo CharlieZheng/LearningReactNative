@@ -1,0 +1,30 @@
+._1parent .child {
+  align-self: flex-end
+}
+
+[class$="parent"] {
+  margin: 16px;
+  padding: 4px;
+  background-color: #e7e7e7;
+  width: 104px;
+  height: 104px;
+  object-fit: contain;
+  display: flex;
+  box-shadow:
+    inset 0 5px white, 
+    inset 0 -5px #bbb,
+    inset 5px 0 #d7d7d7, 
+    inset -5px 0 #d7d7d7;
+  
+  border-radius: 10%;
+}
+
+.child {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin: 4px;
+  display: block;
+  background-color: #333;
+  box-shadow: insert 0 3px #ff0, insert 0 -3px #f00;
+}
