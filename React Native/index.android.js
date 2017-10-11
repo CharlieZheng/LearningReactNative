@@ -1,1 +1,1 @@
-import './test2_and';
+import './test6_and';
