@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StackNavigator,} from 'react-navigation';
-import {AppRegistry, Button, Image, Text, View,FlatList} from 'react-native';
+import {AppRegistry, Button, FlatList, Image, Text, View} from 'react-native';
 
 class MainScreen extends React.Component {
     render() {

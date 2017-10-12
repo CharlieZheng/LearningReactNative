@@ -1,40 +1,78 @@
+"use strict"
 import React from 'react';
-import {AppRegistry, Button, Text, View,} from 'react-native';
+import {AppRegistry, LayoutAnimation, Text, TouchableOpacity, View} from 'react-native';
 import {StackNavigator} from 'react-navigation';
 
 var MainScreenNavigator = require('./App2.js');
 var FadeInView = require('./FadeInView.js');
 
-class HomeScreen extends React.Component {
-    static navigationOptions = {
-        title: 'Welcome',
-    };
-
-    render() {
-        const {navigate} = this.props.navigation;
-        return (
-            <View>
-                <Text>Hello, Chat App!</Text>
-                <Button
-                    onPress={() => navigate('Chat')}
-                    title="Chat with Lucy"
-                />
-            </View>
-        );
-    }
-}
-
-
 class ChatScreen extends React.Component {
-    // static navigationOptions = {
-    //     title: 'Chat with Lucy',
-    // };
+    constructor(props) {
+        super(props)
+        this.state = {
+            width: 250,
+            height: 50
+        }
+    }
+
+    startAnimation1 = () => {
+        return new Promise((yes, no) => {
+            var count = 0
+            while (++count <= 200) {
+                if (count % 7) {
+                    requestAnimationFrame(() => {
+                        this.setState({
+                            width: this.state.width + 1,
+                            height: this.state.height + 1
+                        })
+                        yes()
+                        no()
+                    })
+                }
+            }
+        })
+    }
+
+    startAnimation2() {
+        LayoutAnimation.configureNext({
+            duration: 2000, //持续时间
+            create: { // 视图创建
+                type: LayoutAnimation.Types.spring, property: LayoutAnimation.Properties.scaleXY,
+            },
+            update: { // 视图更新
+                type: LayoutAnimation.Types.spring,
+            },
+        });
+        this.setState({width: this.state.width + 10, height: this.state.height + 10});
+    }
+
+
+    componentDidMount() {
+        // this.startAnimation1().then().catch()
+    }
+
+    f1 = () => {
+
+        return <FadeInView style={{width: 250, height: 50, backgroundColor: 'red'}}>
+            <Text style={{fontSize: 28, textAlign: 'center', margin: 10}}>Fading in</Text>
+        </FadeInView>
+
+    }
+    f2 = () => {
+
+        return <View style={{width: this.state.width, height: this.state.height, backgroundColor: 'red'}}>
+
+            <TouchableOpacity onPress={() => this.startAnimation2()}>
+                <Text style={{alignSelf: 'center', color: '#FFFFFF'}}>Press me!</Text>
+            </TouchableOpacity>
+
+        </View>
+
+    }
 
     render() {
         return (
-            <FadeInView style={{width: 250, height: 50, backgroundColor: 'powderblue'}}>
-                <Text style={{fontSize: 28, textAlign: 'center', margin: 10}}>Fading in</Text>
-            </FadeInView>
+            this.f2()
         )
     }
 }
@@ -47,11 +85,11 @@ class NavigatorWrappingScreen extends React.Component {
     }
 }
 
-NavigatorWrappingScreen.router = MainScreenNavigator.router;
+NavigatorWrappingScreen.router = MainScreenNavigator.router
 
 export const SimpleApp = StackNavigator({
     Home: {screen: NavigatorWrappingScreen},
     Chat_whatever_name: {screen: ChatScreen},
 });
-AppRegistry.registerComponent('AwesomeProject', () => SimpleApp);
+AppRegistry.registerComponent('AwesomeProject', () => SimpleApp)
 

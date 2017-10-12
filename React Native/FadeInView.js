@@ -29,7 +29,7 @@ export class FadeInView extends React.Component {
                         }),
                     }],
                 }}>
-                {this.props.children}
+                { this.props.children }
             </Animated.View>
         );
     }

@@ -1,1 +1,1 @@
-import './test6_and';
+import './animation/test4';
