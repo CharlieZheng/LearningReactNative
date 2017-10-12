@@ -1,1 +1,1 @@
-import './animation/test4';
+import './Splash';
