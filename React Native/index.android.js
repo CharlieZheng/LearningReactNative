@@ -1,1 +1,1 @@
-import './Splash';
+import './test3_and';
