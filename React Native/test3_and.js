@@ -126,7 +126,7 @@ class ReactNativeTest extends Component {
         return ( <FlatList data={
                 this.state.artists
             }  keyExtractor={this._keyExtractor}
-                           renderItem={({item}) => <Image source={{uri:item.picUrl}} style={styles.thumbnail}/>}/>
+                           renderItem={({item}) => (<View><Image source={{uri:item.picUrl}} style={styles.thumbnail}/><Text>{item.name}</Text></View>)}/>
         )
     }
 }
