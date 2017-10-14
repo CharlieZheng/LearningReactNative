@@ -56,7 +56,7 @@ class ReactNativeTest extends Component {
         //     return this.renderLoadingView();
         // }
         // var movie = this.state.movies[0];
-        if (!this.state.artists) {
+        if (!this.state.movies) {
             return this.renderLoadingView();
         }
         return this.renderMovie();
@@ -77,7 +77,7 @@ class ReactNativeTest extends Component {
     fetchArtists() {
         fetch(BASE_URL + url + "?offset=" + offset + "&limit=" + limit)
             .then((res) =>
-            {return  res.json()}
+            res.json()
             ).then((res2)=>{ this.setState({artists: res2.artists})})
             .catch((err) => {
                 this.setState({artists: [
@@ -104,8 +104,8 @@ class ReactNativeTest extends Component {
     }
 
     componentDidMount() {
-        // this.fetchData();
-        this.fetchArtists()
+        this.fetchData();
+        // this.fetchArtists()
     }
 
     renderLoadingView() {
@@ -123,11 +123,13 @@ class ReactNativeTest extends Component {
         </View>
         </View>
       );*/
-        return ( <FlatList data={
+        return ( <View>
+            <Text>{this.state.movies[0].title}{this.state.movies[0].year}</Text>
+            <FlatList data={
                 this.state.artists
             }  keyExtractor={this._keyExtractor}
                            renderItem={({item}) => (<View><Image source={{uri:item.picUrl}} style={styles.thumbnail}/><Text>{item.name}</Text></View>)}/>
-        )
+    </View> )
     }
 }
 
