@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 
 const REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
-const BASE_URL = "http://localhost:3000"
+const BASE_URL = "http://192.168.1.119:3000"
 const url = "/top/artists"
 var offset = 0
 const limit = 30
@@ -56,7 +56,7 @@ class ReactNativeTest extends Component {
         //     return this.renderLoadingView();
         // }
         // var movie = this.state.movies[0];
-        if (!this.state.movies) {
+        if (!this.state.artists) {
             return this.renderLoadingView();
         }
         return this.renderMovie();
@@ -75,42 +75,52 @@ class ReactNativeTest extends Component {
     }
 
     fetchArtists() {
-        fetch(BASE_URL + url + "?offset=" + offset + "&limit=" + limit)
-            .then((res) =>
-            res.json()
-            ).then((res2)=>{ this.setState({artists: res2.artists})})
+        fetch(BASE_URL + url + "?offset=" + offset + "&limit=" + limit, {
+            method: "GET"
+        })
+            .then((res) => {
+                    console.log(res)
+                  return  res.json()
+                }
+            ).then((res2) => {
+            console.log(res2)
+            this.setState({artists: res2.artists})
+        })
             .catch((err) => {
-                this.setState({artists: [
-                    {
-                        "img1v1Id":19018252625793868,
-                        "topicPerson":0,
-                        "albumSize":31,
-                        "img1v1Url":"http://p3.music.126.net/Qc5fsvjghmXXrLavDdQWgA==/19018252625793869.jpg",
-                        "picId":18769762999688244,
-                        "briefDesc":"",
-                        "musicSize":368,
-                        "picUrl":"http://p3.music.126.net/6OARlbfxOysQJU5iZ8WKSA==/18769762999688243.jpg",
-                        "trans":"",
-                        "alias":[
-                            "Jay Chou"
-                        ],
-                        "name":"周杰伦",
-                        "id":6452,
-                        "picId_str":"18769762999688243",
-                        "img1v1Id_str":"19018252625793869"
-                    }
-                ]})
+                this.setState({
+                    artists: [
+                        {
+                            "img1v1Id": 19018252625793868,
+                            "topicPerson": 0,
+                            "albumSize": 31,
+                            "img1v1Url": "http://p3.music.126.net/Qc5fsvjghmXXrLavDdQWgA==/19018252625793869.jpg",
+                            "picId": 18769762999688244,
+                            "briefDesc": "",
+                            "musicSize": 368,
+                            "picUrl": "http://p3.music.126.net/6OARlbfxOysQJU5iZ8WKSA==/18769762999688243.jpg",
+                            "trans": "",
+                            "alias": [
+                                "Jay Chou"
+                            ],
+                            "name": "周杰伦",
+                            "id": 6452,
+                            "picId_str": "18769762999688243",
+                            "img1v1Id_str": "19018252625793869"
+                        }
+                    ]
+                })
             })
     }
 
     componentDidMount() {
-        this.fetchData();
-        // this.fetchArtists()
+        // this.fetchData();
+        this.fetchArtists()
     }
 
     renderLoadingView() {
         return (<View><Text>你好，世界！</Text></View>)
     }
+
     _keyExtractor = (item, index) => item.name;
 
     renderMovie() {
@@ -124,12 +134,13 @@ class ReactNativeTest extends Component {
         </View>
       );*/
         return ( <View>
-            <Text>{this.state.movies[0].title}{this.state.movies[0].year}</Text>
+
             <FlatList data={
                 this.state.artists
-            }  keyExtractor={this._keyExtractor}
-                           renderItem={({item}) => (<View><Image source={{uri:item.picUrl}} style={styles.thumbnail}/><Text>{item.name}</Text></View>)}/>
-    </View> )
+            } keyExtractor={this._keyExtractor}
+                      renderItem={({item}) => (<View><Image source={{uri: item.picUrl}}
+                                                            style={styles.thumbnail}/><Text>{item.name}</Text></View>)}/>
+        </View> )
     }
 }
 
