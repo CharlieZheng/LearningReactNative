@@ -1,6 +1,6 @@
 // FadeInView.js
 import React from 'react';
-import {Animated,} from 'react-native';
+import {Animated} from 'react-native';
 
 export class FadeInView extends React.Component {
     constructor(props) {

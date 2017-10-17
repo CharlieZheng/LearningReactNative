@@ -66,7 +66,7 @@ const MyApp = TabNavigator({
     swipeEnabled: true,
     animationEnabled: true,
     tabBarOptions: {
-        activeTintColor: '#e91e63',
+        activeTintColor: '#Fe91e63',
         showIcon: true,
         scrollEnabled: false,
     },
