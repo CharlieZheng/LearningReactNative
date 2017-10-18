@@ -3,16 +3,15 @@ import {AppRegistry, Image, StyleSheet, Text, View, Dimensions, StatusBar, TextI
 import {
     StackNavigator,
 } from 'react-navigation';
-import FileMgr from "react-native-filesystem"
 const deviceHeight = require('Dimensions').get('window').height
 const deviceWidth = require('Dimensions').get('window').width
 const {width, height} = Dimensions.get('window');
 const styles = StyleSheet.create({});
-
+import Main2 from "./profile/main"
 const BASE_URL = "http://192.168.1.110:3000"
 const url = "/login/cellphone"
 
-const file = "./json/login.json"
+const file = "json/login.json"
 class Splash extends Component {
     componentDidMount() {
         setTimeout(() => {
@@ -49,18 +48,15 @@ class Main extends Component {
 
     render() {
         function submit() {
-            FileMgr.writeToFile(file, "Hello")
-                .then((res) =>{alert("写入成功")})
-                .catch((err) =>{alert("写入失败："+err)})
 
-            // fetch(BASE_URL + url + "?phone=" + this.state.phone + "&password=" + this.state.psw, {method: "GET"})
-            //     .then((res) =>
-            //     {  return res.json()})
-            //     .then((res) => {
-            //  })
-            //     .catch(err => {
-            //         alert(err.toString())
-            //     })
+            fetch(BASE_URL + url + "?phone=" + this.state.phone + "&password=" + this.state.psw, {method: "GET"})
+                .then((res) =>
+                {  return res.json()})
+                .then((res) => {
+             })
+                .catch(err => {
+                    alert(err.toString())
+                })
         }
 
         return (
@@ -83,7 +79,7 @@ const App = StackNavigator({
             header:null
         }
     },
-    main: {screen: Main}
+    main: {screen: Main2}
 });
 
 AppRegistry.registerComponent('AwesomeProject', () => App);
