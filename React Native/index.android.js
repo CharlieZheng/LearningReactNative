@@ -1,1 +1,1 @@
-import './Splash';
+import './js/Splash';

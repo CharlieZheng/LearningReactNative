@@ -1,0 +1,111 @@
+{
+  "loginType": 1,
+  "code": 200,
+  "account": {
+    "id": 18652898,
+    "userName": "1_13533361755",
+    "type": 1,
+    "status": 0,
+    "whitelistAuthority": 0,
+    "createTime": 0,
+    "salt": "[B@66e36d84",
+    "tokenVersion": 0,
+    "ban": 0,
+    "baoyueVersion": -2,
+    "donateVersion": 0,
+    "vipType": 0,
+    "viptypeVersion": 1501517394121,
+    "anonimousUser": false
+  },
+  "profile": {
+    "mutual": false,
+    "remarkName": null,
+    "nickname": "SB-Zheng",
+    "accountStatus": 0,
+    "province": 440000,
+    "defaultAvatar": false,
+    "avatarUrl": "http://p1.music.126.net/B1SyAsLzRTM5acUcxr8PDA==/7981354906278401.jpg",
+    "gender": 1,
+    "birthday": 691685933972,
+    "city": 440300,
+    "backgroundUrl": "http://p1.music.126.net/UekZvYlvnZo26K-vrgaSdw==/3300733908675275.jpg",
+    "userId": 18652898,
+    "expertTags": null,
+    "experts": {},
+    "avatarImgId": 7981354906278401,
+    "backgroundImgId": 3300733908675275,
+    "userType": 0,
+    "vipType": 0,
+    "authStatus": 0,
+    "description": "",
+    "detailDescription": "",
+    "djStatus": 0,
+    "followed": false,
+    "avatarImgIdStr": "7981354906278401",
+    "backgroundImgIdStr": "3300733908675275",
+    "signature": "但愿人长久。",
+    "authority": 0
+  },
+  "bindings": [
+    {
+      "expired": false,
+      "tokenJsonStr": "{\"countrycode\":\"\",\"cellphone\":\"13533361755\",\"hasPassword\":true}",
+      "url": "",
+      "userId": 18652898,
+      "expiresIn": 2147483647,
+      "refreshTime": 1415373403,
+      "id": 21614149,
+      "type": 1
+    },
+    {
+      "expired": false,
+      "tokenJsonStr": "{\"allow_all_act_msg\":false,\"favourites_count\":1,\"urank\":6,\"verified_trade\":\"\",\"weihao\":\"\",\"verified_source_url\":\"\",\"province\":\"44\",\"screen_name\":\"坐着设舞贤韰谭觑屙杗卂怼屙蠃\",\"id\":5285256428,\"geo_enabled\":true,\"verified_type\":-1,\"access_token\":\"2.007d5glF0Gg46165e419ebc4gZws5E\",\"pagefriends_count\":1,\"domain\":\"\",\"following\":false,\"name\":\"坐着设舞贤韰谭觑屙杗卂怼屙蠃\",\"cover_image_phone\":\"http://ww1.sinaimg.cn/crop.0.0.640.640.640/549d0121tw1egm1kjly3jj20hs0hsq4f.jpg\",\"idstr\":\"5285256428\",\"follow_me\":false,\"friends_count\":16,\"credit_score\":80,\"gender\":\"m\",\"city\":\"1\",\"profile_url\":\"u/5285256428\",\"description\":\"\",\"created_at\":\"Wed Sep 10 09:46:33 +0800 2014\",\"remark\":\"\",\"ptype\":0,\"verified_reason_url\":\"\",\"block_word\":0,\"uid\":\"5285256428\",\"avatar_hd\":\"http://tvax1.sinaimg.cn/default/images/default_avatar_male_180.gif\",\"mbtype\":0,\"bi_followers_count\":1,\"user_ability\":0,\"verified_reason\":\"\",\"mbrank\":0,\"lang\":\"zh-cn\",\"expires_in\":2616419,\"class\":1,\"remind_in\":\"2616419\",\"star\":0,\"allow_all_comment\":true,\"online_status\":0,\"verified\":false,\"profile_image_url\":\"http://tvax1.sinaimg.cn/default/images/default_avatar_male_50.gif\",\"block_app\":0,\"url\":\"\",\"avatar_large\":\"http://tvax1.sinaimg.cn/default/images/default_avatar_male_180.gif\",\"statuses_count\":9,\"followers_count\":5,\"location\":\"广东 广州\",\"insecurity\":{\"sexual_content\":false},\"verified_source\":\"\",\"status\":{\"created_at\":\"Thu Feb 11 16:50:30 +0800 2016\",\"id\":3941375588081139,\"mid\":\"3941375588081139\",\"idstr\":\"3941375588081139\",\"text\":\"#马东的红包#一不小心又中奖了！(≖ ‿ ≖)✧我在马东 的红包中抽到了@滴滴出行 提供的“滴滴百元礼包”，好实在的新年礼物，让宝宝心情美丽一整天～http://t.cn/RG5n7Qn\",\"textLength\":158,\"source_allowclick\":0,\"source_type\":1,\"source\":\"粉丝红包\",\"favorited\":false,\"truncated\":false,\"in_reply_to_status_id\":\"\",\"in_reply_to_user_id\":\"\",\"in_reply_to_screen_name\":\"\",\"pic_urls\":[],\"geo\":null,\"reposts_count\":0,\"comments_count\":0,\"attitudes_count\":0,\"isLongText\":false,\"mlevel\":0,\"visible\":{\"type\":0,\"list_id\":0},\"biz_ids\":[230632],\"biz_feature\":0,\"page_type\":32,\"hasActionTypeCard\":0,\"darwin_tags\":[],\"hot_weibo_tags\":[],\"text_tag_tips\":[],\"userType\":0,\"positive_recom_flag\":0,\"gif_ids\":\"\",\"is_show_bulletin\":0},\"code\":-1506097387371,\"message\":\"请求[https://api.weibo.com/2/users/show.json?source=301575942&uid=5285256428&access_token=2.007d5glF0Gg46165e419ebc4gZws5E]超时！\"}",
+      "url": "http://weibo.com/u/5285256428",
+      "userId": 18652898,
+      "expiresIn": 2616419,
+      "refreshTime": 1506097464,
+      "id": 61468733,
+      "type": 2
+    },
+    {
+      "expired": true,
+      "tokenJsonStr": "{\"openkey\":\"F7D9D8F19704ACD0EFE0BCE536735945\",\"nick\":\"Charlie\",\"name\":\"charlie027613\",\"expires_in\":\"8035200\",\"openid\":\"8c14387a9899ea83e6046150c1451b76\",\"refresh_token\":\"fbcac786be449a77355a2e521746d985&openid\",\"access_token\":\"0d98a535ca1c8b490ba2139a4b919ad1\",\"openId\":\"8C14387A9899EA83E6046150C1451B76\"}",
+      "url": "http://t.qq.com/charlie027613",
+      "userId": 18652898,
+      "expiresIn": 8035200,
+      "refreshTime": 1444986585,
+      "id": 17909639,
+      "type": 6
+    },
+    {
+      "expired": true,
+      "tokenJsonStr": "{\"douban_user_id\":\"122707845\",\"expires_in\":604800,\"refresh_token\":\"2654cf81ee7ff42972fe6e85cb7fdc7b\",\"douban_user_name\":\"hanrong\",\"access_token\":\"adf5f254b6ea225209e1d6fe24be66f6\"}",
+      "url": "http://www.douban.com/people/122707845",
+      "userId": 18652898,
+      "expiresIn": 604800,
+      "refreshTime": 1453040985,
+      "id": 61507395,
+      "type": 3
+    },
+    {
+      "expired": true,
+      "tokenJsonStr": "{\"query_authority_cost\":628,\"nickname\":\"但愿人长久\",\"authority_cost\":5502,\"expires_in\":7776000,\"openid\":\"367A03CFDBD5A208A0D69F53B88AD859\",\"login_cost\":4048,\"access_token\":\"A49ED1EA8E85E53955C530D90B9A553F\"}",
+      "url": "",
+      "userId": 18652898,
+      "expiresIn": 7776000,
+      "refreshTime": 1453040940,
+      "id": 61459830,
+      "type": 5
+    },
+    {
+      "expired": true,
+      "tokenJsonStr": "{\"access_token\":\"ak7d9lx0HIPhe5nlqcLeqoJERJ6sWV_CwyyOtLqU5zzH_laiALPjDDp45KQGgunEww5vVmA16LGuZts5MBRvXnzBUrHaJCPmCXgfpTWhI4k\",\"refresh_token\":\"v_znlZ3ozV6oGck3wn6OA-_aQ6xwmHoQ6kbIdrrBAZn0fi4egZx4N-uNDikZuRXPES0PS-MV0BilOMsVSwY_CtjKiC9zlyRIX2TxHRD-CQk\",\"unionid\":\"oZoefuA-UGSnhMyZGYSMZ9TNUVsY\",\"openid\":\"okvmMjkhb_eHlVlw1wJKJl-pb-C8\",\"scope\":\"snsapi_userinfo\",\"name\":\"郑汉r\",\"nickname\":\"郑汉r\",\"expires_in\":7200}",
+      "url": "",
+      "userId": 18652898,
+      "expiresIn": 7200,
+      "refreshTime": 1505495267,
+      "id": 61460807,
+      "type": 10
+    }
+  ]
+}

@@ -14,7 +14,7 @@ class MainScreen extends React.Component {
                         navigate('Profile')
                     }
                 />
-                <Image source={require("./img/favicon.png")}
+                <Image source={require("./js/res/img/favicon.png")}
                        style={{width: undefined, height: 300, borderTopLeftRadius: 100}}/>
                 <FlatList
                     data={[{key: 'a'}, {key: 'b'}, {key: 'c'}, {key: 'd'}, {key: 'e'}]}
