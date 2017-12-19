@@ -1,26 +1,26 @@
 import React, {Component} from 'react';
-import {AppRegistry, Image, StyleSheet, Text, View, Dimensions, AsyncStorage} from 'react-native';
-import {
-    StackNavigator
-} from 'react-navigation';
+import {AppRegistry, AsyncStorage, Image, View} from 'react-native';
+import {StackNavigator} from 'react-navigation';
 import url from "./base/url"
+import Login from "./login"
+import Profile from "./profile"
+import PlayList from "./my/PlayList"
+import myDj from "./my/myDj"
+import myFollows from "./my/myFollows"
+import myFans from "./my/myFans"
+
 const deviceHeight = require('Dimensions').get('window').height
 const deviceWidth = require('Dimensions').get('window').width
-const {width, height} = Dimensions.get('window');
-const styles = StyleSheet.create({});
-import Login from "./login"
-import Profile from  "./profile"
+
 class Splash extends Component {
     componentWillMount() {
-        AsyncStorage.getItem(url.login, (err, result) =>{
-            if (err) {
+        AsyncStorage.getItem(url.login, (err, result) => {
+            if (err || !result) {
                 setTimeout(() => {
                     this.props.navigation.navigate("login")
                 }, 500)
             } else {
-               /* const json_result = eval("(" + result + ")")._bodyInit
-                Clipboard.setString(json_result)*/
-                  setTimeout(() => {
+                setTimeout(() => {
                     this.props.navigation.navigate("profile")
                 }, 500)
             }
@@ -44,12 +44,14 @@ class Splash extends Component {
 
 const App = StackNavigator({
     splash: {
-        screen: Splash, navigationOptions: () => {
-            header:null
-        }
+        screen: Splash
     },
     login: {screen: Login},
-    profile:{screen:Profile}
+    profile: {screen: Profile},
+    playlist: {screen: PlayList},
+    myFollows: {screen: myFollows},
+    myFans: {screen: myFans},
+    myDj: {screen: myDj}
 });
 
 AppRegistry.registerComponent('AwesomeProject', () => App);
