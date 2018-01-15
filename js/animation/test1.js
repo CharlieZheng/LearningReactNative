@@ -76,7 +76,7 @@ class Demo2 extends React.Component {
                                 [{nativeEvent: {contentOffset: {x: this.state.xOffset}}}]
                             )}
                             scrollEventThrottle={100}>
-                    <Animated.Image source={require('../js/res/img/favicon.android.png')}
+                    <Animated.Image source={require('../res/img/favicon.android.png')}
                                     style={{
                                         height: deviceHeight,
                                         width: deviceWidth,
@@ -86,10 +86,10 @@ class Demo2 extends React.Component {
                                         }),
                                     }}
                                     resizeMode="cover"/>
-                    <Image source={require('../js/res/img/favicon.android.png')}
+                    <Image source={require('../res/img/favicon.android.png')}
                            style={{height: deviceHeight, width: deviceWidth}}
                            resizeMode="cover"/>
-                    <Image source={require('../js/res/img/favicon.android.png')}
+                    <Image source={require('../res/img/favicon.android.png')}
                            style={{height: deviceHeight, width: deviceWidth}}
                            resizeMode="cover"/>
                 </ScrollView>
@@ -132,4 +132,4 @@ class Demo3 extends React.Component {
 }
 
 
-export default  Demo1
+export default  Demo2

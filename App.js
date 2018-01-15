@@ -53,11 +53,12 @@ const Stack = StackNavigator({
     myFans: {screen: myFans},
     myDj: {screen: myDj}
 });
+import Bar from './js/main/barbottom'
 export default class App extends Component<> {
-    // <Demo1/>
+
     render() {
         return (
-            <Splash/>
+            <Bar/>
         );
     }
 }

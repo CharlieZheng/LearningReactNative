@@ -51,7 +51,6 @@ buck-out/
 */fastlane/report.xml
 */fastlane/Preview.html
 */fastlane/screenshots
-__tests__
 node_modules
 .babelrc
 .bash_profile
