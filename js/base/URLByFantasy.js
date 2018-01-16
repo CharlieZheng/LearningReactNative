@@ -1,0 +1,1 @@
+const base_url = "http://api.ftx1.com"const list_main = base_url + "/new/apiOfContestQuery/api/categories/mainCategories" // 首页列表export {list_main}

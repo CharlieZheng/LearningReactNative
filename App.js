@@ -8,9 +8,9 @@ import PlayList from "./js/my/PlayList"
 import myDj from "./js/my/myDj"
 import myFollows from "./js/my/myFollows"
 import myFans from "./js/my/myFans"
+import Bar from './js/main/barbottom'
+import {deviceHeight, deviceWidth} from "./js/utils"
 
-const deviceHeight = require('Dimensions').get('window').height
-const deviceWidth = require('Dimensions').get('window').width
 
 class Splash extends Component {
     componentWillMount() {
@@ -53,7 +53,6 @@ const Stack = StackNavigator({
     myFans: {screen: myFans},
     myDj: {screen: myDj}
 });
-import Bar from './js/main/barbottom'
 export default class App extends Component<> {
 
     render() {
