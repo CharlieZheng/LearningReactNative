@@ -1,22 +1,19 @@
 import {TabNavigator} from 'react-navigation';
-
-import MainFootball from './MainFootball'
-import MainBasketball from './MainBasketball'
-import MainGaming from './MainGaming'
-import MainBaseball from './MainBaseball'
+import MainBasketball from './FragmentMain'
 
 const MyNavigator = TabNavigator({
     Football: {
-        screen: MainFootball
+        screen: MainBasketball
     },
     Basketball: {
         screen: MainBasketball
     },
     Gaming: {
-        screen: MainGaming
+        screen: MainBasketball
     },
     Baseball: {
-        screen: MainBaseball
+        screen: MainBasketball,
+        params: {name: 'world'}
     }
 }, {
     tabBarPosition: 'top',
