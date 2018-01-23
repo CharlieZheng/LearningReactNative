@@ -8,27 +8,32 @@ const styles = StyleSheet.create({
 })
 
 export default class MainBasketball extends Component {
+
+
+    static navigationOptions = {
+        tabBarLabel: '篮球'
+    };
+    lobbyId = 0
+
     constructor(props) {
         super(props)
         this.state = {
-            list: [],
-            lobbyId: 0,
-            refreshing: false
+            list: []
+
         }
+        lobbyId = undefined
     }
 
     _refresh() {
-        this.setState({refreshing: true})
-        fetch(list_main + "?lobbyId=" + this.state.lobbyId, {method: "GET"})
+        alert(lobbyId)
+        fetch(list_main + "?lobbyId=" + this.lobbyId, {method: "GET"})
             .then(res => {
-                this.setState({refreshing: false})
-                Clipboard.setString(JSON.stringify(res ))
+                Clipboard.setString(JSON.stringify(res))
                 let temp = JSON.parse(res._bodyText)
                 this.setState({list: temp.data})
 
             })
             .catch(err => {
-                this.setState({refreshing: false})
                 alert(err)
             })
     }
@@ -37,26 +42,25 @@ export default class MainBasketball extends Component {
 
         const {state} = this.props.navigation;
 
-        if (state) {
 
-            switch (JSON.parse(JSON.stringify(state)).key) {
+        if (state) {
+            switch (state.key) {
                 case 'Football':
-                    this.setState({lobbyId: 1})
+                    this.lobbyId = 1
                     break
                 case 'Basketball':
-                    this.setState({lobbyId: 2})
+                    this.lobbyId = 2
                     break
                 case 'Gaming':
-                    this.setState({lobbyId: 3})
+                    this.lobbyId = 3
                     break
                 case 'Baseball':
-                    this.setState({lobbyId: 4})
+                    this.lobbyId = 4
                     break
             }
         }
-        /*  if (state.params) alert(state.params.toString())
-          else alert(null)
-        */
+
+
         this._refresh()
 
     }
@@ -134,8 +138,9 @@ export default class MainBasketball extends Component {
         return (   <Text>没有更多了～</Text>)
     }
 
-                    // refreshing={this.state.refreshing}
-                    // onRefresh={this._refresh()}
+    // refreshing={this.state.refreshing}
+
+    // onRefresh={this._refresh()}
 
     render() {
         return (

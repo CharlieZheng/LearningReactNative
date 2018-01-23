@@ -4,9 +4,11 @@ import MainBasketball from './FragmentMain'
 const MyNavigator = TabNavigator({
     Football: {
         screen: MainBasketball
+
     },
     Basketball: {
-        screen: MainBasketball
+        screen: MainBasketball,
+        headerTitle: 'd'
     },
     Gaming: {
         screen: MainBasketball
