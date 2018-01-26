@@ -1,7 +1,14 @@
-import {Animated, AppRegistry, Easing, StyleSheet, Text, TouchableHighlight, View} from 'react-native'
+import {Animated, Easing, StyleSheet, Text, TouchableHighlight, View} from 'react-native'
 import React from 'react'
 
-class C1 extends React.Component {
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        paddingTop: 150
+    }
+})
+
+export default class C1 extends React.Component {
     constructor(props) {
         super(props)
         this.animatedValue1 = new Animated.Value(0)
@@ -35,6 +42,7 @@ class C1 extends React.Component {
             createAnimation(this.animatedValue3, 1000, Easing.ease, 2000)
         ]).start()
     }
+
 
     render() {
         const scaleText = this.animatedValue1.interpolate({
@@ -77,12 +85,3 @@ class C1 extends React.Component {
 
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingTop: 150
-    }
-})
-
-
-AppRegistry.registerComponent('AwesomeProject', () => C1)

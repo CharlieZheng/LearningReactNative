@@ -8,8 +8,8 @@ import PlayList from "./js/my/PlayList"
 import myDj from "./js/my/myDj"
 import myFollows from "./js/my/myFollows"
 import myFans from "./js/my/myFans"
-import Bar from './js/main/barbottom'
 import {deviceHeight, deviceWidth} from "./js/utils"
+import C1 from "./js/Animated API/test2"
 
 
 class Splash extends Component {
@@ -55,9 +55,10 @@ const Stack = StackNavigator({
 });
 export default class App extends Component<> {
 
+    // <Bar/>
     render() {
         return (
-            <Bar/>
+            <C1/>
         );
     }
 }

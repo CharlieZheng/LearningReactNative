@@ -1,19 +1,8 @@
 import React from 'react'
-import {
-    Animated,
-    AppRegistry,
-    Image,
-    LayoutAnimation,
-    PanResponder,
-    PixelRatio,
-    ScrollView,
-    Text,
-    TouchableOpacity,
-    View
-} from 'react-native'
+import {Animated, Image, LayoutAnimation, PanResponder, ScrollView, Text, TouchableOpacity, View} from 'react-native'
 
-var deviceHeight = require('Dimensions').get('window').height
-var deviceWidth = require('Dimensions').get('window').width
+let deviceHeight = require('Dimensions').get('window').height
+let deviceWidth = require('Dimensions').get('window').width
 
 class Demo1 extends React.Component {
     constructor(props) {
@@ -24,7 +13,10 @@ class Demo1 extends React.Component {
         this._panResponder = PanResponder.create({
             onStartShouldSetPanResponder: () => true, //响应手势
             onPanResponderMove: Animated.event(
-                [null, {dx: this.state.trans.x, dy: this.state.trans.y}] // 绑定动画值
+                [
+                    null, // 忽略原生事件
+                    {dx: this.state.trans.x, dy: this.state.trans.y}
+                ] // 绑定动画值
             ),
             onPanResponderRelease: () => {//手松开，回到原始位置
                 Animated.spring(this.state.trans, {toValue: {x: 0, y: 0}}
@@ -132,4 +124,4 @@ class Demo3 extends React.Component {
 }
 
 
-export default  Demo2
+export default Demo2

@@ -1,16 +1,26 @@
-import {Animated, AppRegistry, Easing, StyleSheet, View,Text} from 'react-native'
+/**
+ * Animated API:
+ *     Animated.multiply
+ */
+import {Animated, Easing, StyleSheet, Text, View} from 'react-native'
 import React from 'react'
 
-class C1 extends React.Component {
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        paddingLeft: 20
+    }
+})
+
+class Child extends React.Component {
+    toValueAnimatedValue = 1
+    spinValue
+
     constructor(props) {
         super(props)
         this.spinValue = new Animated.Value(0)
         this.animatedValue = new Animated.Value(0)
-    }
-
-    componentDidMount() {
-        this.spin()
-        this.animate()
+        this.opacityValue = new Animated.Value(0)
     }
 
     spin() {
@@ -20,20 +30,50 @@ class C1 extends React.Component {
             {
                 toValue: 1,
                 duration: 4000,
-                easing: Easing.linear//linear, ease, quad, cubic, sin, elastic, bounce, back, bezier, in, out, inout
+                easing: Easing.linear, // linear, ease, quad, cubic, sin, elastic, bounce, back, bezier, in, out, inout
+                useNativeDriver: true
             }
-        ).start(() => this.spin())
-    }animate () {
+        ).start(() => {
+
+
+            // this.spin()
+            // alert("spin 动画结束")
+        })
+    }
+
+    animate() {
         this.animatedValue.setValue(0)
         Animated.timing(
             this.animatedValue,
             {
-                toValue: 1,
-                duration: 2000,
+                toValue: this.toValueAnimatedValue,
+                duration: 5000,
                 easing: Easing.linear
             }
-        ).start(() => this.animate())
+        ).start(() => {
+
+            // this.animate()
+            // alert("animated 动画结束")
+        })
     }
+
+    opacityFunction() {
+        this.opacityValue.setValue(0)
+        Animated.timing(
+            this.opacityValue,
+            {
+                toValue: 1,
+                duration: 1000
+            }
+        ).start()
+    }
+
+    componentDidMount() {
+        this.spin()
+        this.animate()
+        this.opacityFunction()
+    }
+
 
     render() {
         const spin = this.spinValue.interpolate({
@@ -41,27 +81,30 @@ class C1 extends React.Component {
             outputRange: ['0deg', '360deg']
         })
         const marginLeft = this.animatedValue.interpolate({
-            inputRange: [0, 1],
-            outputRange: [0, 300]
+            inputRange: [0, this.toValueAnimatedValue],
+            outputRange: [0, 200]
         })
         const opacity = this.animatedValue.interpolate({
-            inputRange: [0, 0.5, 1],
-            outputRange: [0, 1, 0]
+            inputRange: [0, 0.25 * this.toValueAnimatedValue, 0.75 * this.toValueAnimatedValue, this.toValueAnimatedValue],
+            outputRange: [0, 1, 0, 1]
         })
         const movingMargin = this.animatedValue.interpolate({
-            inputRange: [0, 0.5, 1],
-            outputRange: [0, 300, 0]
+            inputRange: [0, 0.5 * this.toValueAnimatedValue, this.toValueAnimatedValue],
+            outputRange: [0, 200, 0]
         })
         const textSize = this.animatedValue.interpolate({
-            inputRange: [0, 0.5, 1],
+            inputRange: [0, 0.5 * this.toValueAnimatedValue, this.toValueAnimatedValue],
             outputRange: [18, 32, 18]
         })
         const rotateX = this.animatedValue.interpolate({
-            inputRange: [0, 0.5, 1],
+            inputRange: [0, 0.5 * this.toValueAnimatedValue, this.toValueAnimatedValue],
             outputRange: ['0deg', '180deg', '0deg']
         })
+
         return (
-            <View style={styles.container}>
+            <View style={
+                [{...this.props.style},
+                    styles.container]}>
                 <Animated.Image
                     style={{
                         width: 227,
@@ -74,6 +117,14 @@ class C1 extends React.Component {
                     style={{
                         marginLeft,
                         height: 30,
+                        width: Animated.multiply(40, this.animatedValue),
+                        backgroundColor: 'red'
+                    }}/>
+
+                <Animated.View
+                    style={{
+                        opacity: this.opacityValue,
+                        height: Animated.multiply(30, this.animatedValue),
                         width: 40,
                         backgroundColor: 'red'
                     }}/>
@@ -111,16 +162,24 @@ class C1 extends React.Component {
                     }}>
                     <Text style={{color: 'white'}}>Hello from TransformX</Text>
                 </Animated.View>
+                {this.props.children}
             </View>
         )
     }
 
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingTop: 150
-    }
-})
 
+export default class C1 extends React.Component {
+
+
+    render() {
+        return (
+            <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                <Child style={{width: 250, height: 50, backgroundColor: 'powderblue'}}>
+                    <Text style={{fontSize: 28, textAlign: 'center', margin: 10}}>Fading in</Text>
+                </Child>
+            </View>
+        )
+    }
+}
