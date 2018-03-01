@@ -7,25 +7,31 @@ const styles = StyleSheet.create({
     item: {paddingLeft: 20, paddingRight: 20}
 })
 
-export default class MainBasketball extends Component {
+export default class MainFragmentChild extends Component {
 
-
-    static navigationOptions = {
-        tabBarLabel: '篮球'
-    };
+    // 在其它地方引用需要this指定
     lobbyId = 0
+    static  navigationOptions = ({navigation, screenProps}) => ( {
+
+        tabBarLabel: navigation.state.params ? navigation.state.params.name : null
+    })
 
     constructor(props) {
         super(props)
+        // 跟外面的成员变量lobbyId的访问方式一样
         this.state = {
             list: []
 
         }
-        lobbyId = undefined
+        // 在其它地方引用不需要this指定
+        lobbyId = "Hello"
+        lobbyMap = [
+            "足球", "篮球", "电竞", "棒球"
+        ]
     }
 
     _refresh() {
-        alert(lobbyId)
+        // alert(lobbyId)
         fetch(list_main + "?lobbyId=" + this.lobbyId, {method: "GET"})
             .then(res => {
                 Clipboard.setString(JSON.stringify(res))
@@ -63,6 +69,17 @@ export default class MainBasketball extends Component {
 
         this._refresh()
 
+    }
+
+    pressAction = () => {
+        console.log(this.props.navigation);
+    }
+
+    componentDidMount() {
+        this.props.navigation.setParams({
+            name: lobbyMap[this.lobbyId - 1],
+            pressAction: this.pressAction
+        })
     }
 
     _getLogo(item, host) {
