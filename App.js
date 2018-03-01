@@ -9,8 +9,7 @@ import myDj from "./js/my/myDj"
 import myFollows from "./js/my/myFollows"
 import myFans from "./js/my/myFans"
 import {deviceHeight, deviceWidth} from "./js/utils"
-import C1 from "./js/Animated API/test2"
-
+import AntDesign from "./js/learning_antd/AntDesign"
 
 class Splash extends Component {
     componentWillMount() {
@@ -54,11 +53,13 @@ const Stack = StackNavigator({
     myDj: {screen: myDj}
 });
 export default class App extends Component<> {
-
+    // import C1 from "./js/Animated API/test2"
+    // <C1/>
+    // import Bar from "./js/main/barbottom"
     // <Bar/>
     render() {
         return (
-            <C1/>
+            <AntDesign/>
         );
     }
 }
