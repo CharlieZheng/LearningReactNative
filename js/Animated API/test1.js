@@ -1,9 +1,7 @@
 import React from 'react'
 import {Animated, Image, LayoutAnimation, PanResponder, ScrollView, Text, TouchableOpacity, View} from 'react-native'
 
-let deviceHeight = require('Dimensions').get('window').height
-let deviceWidth = require('Dimensions').get('window').width
-
+import {deviceHeight, deviceWidth} from "../constants/Constants"
 class Demo1 extends React.Component {
     constructor(props) {
         super(props)
