@@ -51,12 +51,6 @@ buck-out/
 */fastlane/report.xml
 */fastlane/Preview.html
 */fastlane/screenshots
-node_modules
-.babelrc
-.bash_profile
-.buckconfig
-.flowconfig
-.gitattributes
-.watchmanconfig
-package-lock.json
-yarn.lock
+
+# Bundle artifact
+*.jsbundle
