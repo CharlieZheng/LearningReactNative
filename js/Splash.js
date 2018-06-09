@@ -54,4 +54,4 @@ const App = StackNavigator({
     myDj: {screen: myDj}
 });
 
-AppRegistry.registerComponent('AwesomeProject', () => App);
+AppRegistry.registerComponent('learning_react_native', () => App);

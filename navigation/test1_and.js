@@ -72,4 +72,4 @@ const MyApp = TabNavigator({
     },
 });
 
-AppRegistry.registerComponent('AwesomeProject', () => MyApp);
+AppRegistry.registerComponent('learning_react_nativere', () => MyApp);
